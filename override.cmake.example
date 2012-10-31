@@ -1,0 +1,4 @@
+SET(CMAKE_CXX_FLAGS_INIT )
+SET(CMAKE_CXX_FLAGS_DEBUG_INIT "-O3 -g3 -ffast-math -funroll-all-loops -ftree-vectorize -Wall -Wextra -Wno-deprecated")
+SET(CMAKE_CXX_FLAGS_RELEASE_INIT "-m64 -march=opteron -ffast-math -funroll-all-loops -ftree-vectorize -fomit-frame-pointer -O3 -Wall -Wno-deprecated")
+SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT "-m64 -march=opteron -ffast-math -funroll-all-loops -ftree-vectorize -fomit-frame-pointer -O3 -Wall -Wno-deprecated")
