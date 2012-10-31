@@ -1,0 +1,31 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+
+before_install:
+  - sudo apt-get install cmake zlib1g-dev libbz2-dev
+  - mkdir lib
+
+branches:
+  only:
+    - master
+    - /^release\/.*$/
+    - develop
+    - /^hotfix\/.*$/
+    - /^feature\/.*$/
+
+script: cd lib && cmake -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../ && make && sudo make install
+
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#flowbox"
+    template:
+      - "%{repository} (%{commit}) : %{message} %{build_number} "
+      - "Build details: %{build_url}"
+    on_success: always
+    on_failure: always
+  email:
+    on_success: change
+    on_failure: always
