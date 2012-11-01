@@ -8,7 +8,7 @@ ENDIF()
 PROJECT(libflowbox-c++)
 SET(MAJOR_VERSION 1)
 SET(MINOR_VERSION 0)
-SET(PATCH_VERSION 0)
+SET(PATCH_VERSION 1)
 
 
 ####################### FUNCTIONS #############################
