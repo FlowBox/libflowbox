@@ -3,12 +3,12 @@ libflowbox
 FlowBox C++ Library for processing flow data
 
 ## Build Status
-* master: 
+* master:
    [![Build Status master](https://secure.travis-ci.org/FlowBox/libflowbox.png?branch=master)](http://travis-ci.org/FlowBox/libflowbox)
-* develop: 
+* develop:
    [![Build Status develop](https://secure.travis-ci.org/FlowBox/libflowbox.png?branch=develop)](http://travis-ci.org/FlowBox/libflowbox)
 
-Prerequisites (3th party dependencies)
+Prerequisites (3rd party dependencies)
 --------------------------------------------------------------------------------
 * compiler
 * cmake

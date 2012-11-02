@@ -45,7 +45,7 @@ int Flow::addr_import_s(const char* ip, char* to, int addr_length) {
   if (addr_length == kAddressLengthIPv4) {
     if (inet_pton(AF_INET, ip, to) != 1)
       return (kEAddressIPv4Format);
-    memset(to + 4, 0, 12);
+      memset(to + 4, 0, 12);
   } else if (addr_length == kAddressLengthIPv6) {
     if (inet_pton(AF_INET6, ip, to) != 1)
       return (kEAddressIPv6Format);
@@ -78,13 +78,15 @@ int Flow::addr_import_s(const char* ip, char* to) {
 
 void Flow::addr_to_s(std::string& buf, const char* ip_, uint8_t addr_length_) {
   char tmp_ip[INET6_ADDRSTRLEN];
-  if (addr_length_ == 4) {
+  if (addr_length_ == static_cast<uint8_t>(Flow::kAddressLengthIPv4)) {
     inet_ntop(AF_INET, ip_, tmp_ip, INET6_ADDRSTRLEN);
-  } else if (addr_length_ == 16) {
+  } else if (addr_length_ == static_cast<uint8_t>(Flow::kAddressLengthIPv6)) {
     inet_ntop(AF_INET6, ip_, tmp_ip, INET6_ADDRSTRLEN);
+  } else if (addr_length_ == static_cast<uint8_t>(Flow::kAddressLengthUnknown)) {
+    snprintf( tmp_ip, INET6_ADDRSTRLEN, "%s", Flow::kAddressUnknown.c_str()); 
   } else {
     std::stringstream err_msg;
-    err_msg << "Flow: Unknown Address! (" << tmp_ip << ")" << std::endl;
+    err_msg << "Flow: Unknown Address!" << std::endl;
     throw FlowBoxE(err_msg.str(), __FILE__, __LINE__);
   }
 
