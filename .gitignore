@@ -1,21 +1,24 @@
-# Compiled Object files
+# compiled Object files
 *.slo
 *.lo
 *.o
 
-# Compiled Dynamic libraries
+# compiled Dynamic libraries
 *.so
 
-# Compiled Static libraries
+# compiled Static libraries
 *.lai
 *.la
 *.a
 
-# Temp files of ...
+# temp files of ...
 # gedit
 *~
 
-# Misc
+# ignore network dependent config
+include/csg_file_ethz.h
+
+# misc
 .DS_Store
 lib/*
 .cproject
