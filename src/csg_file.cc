@@ -26,32 +26,6 @@
 // CSGFile
 //------------------------------------------------------------------------------
 
-/// We store the IP address of the routers in network byte order in
-/// return the index of cache (router_addr_). This function returns
-/// the index of the cache to use based on the last part of the
-/// IP address.
-int CSGFile::parser_router_id(int ip_d) {
-  // NOTE: We were requested to remove this code segment
-  // due to privacy concerns. Please contact
-  // schadomi directly to help out. Sorry ...
-  throw FlowBoxE("Please update router IP to router object map first!",
-                 __FILE__, __LINE__);
-  return (0);
-}
-
-/// Initialize the router cache.
-void CSGFile::router_map_init(struct sockaddr * router_addr) {
-  ((struct sockaddr_in*) (&router_addr[0]))->sin_family = AF_INET;
-  ((struct sockaddr_in*) (&router_addr[0]))->sin_port = 0;
-  inet_pton(AF_INET, "127.0.0.1",
-            &(((struct sockaddr_in*) (&router_addr[0]))->sin_addr));
-
-  // NOTE: We were requested to remove this code segment
-  // due to privacy concerns. Please contact
-  // schadomi directly to help out. Sorry ...
-  throw FlowBoxE("Please update router IP to router object map first)",
-                 __FILE__, __LINE__);
-}
 
 /// Reset the data structure -- to be ready to process a new file set
 /// - flush all error states
