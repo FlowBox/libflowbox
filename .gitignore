@@ -1,12 +1,12 @@
-# compiled Object files
+# compiled object files
 *.slo
 *.lo
 *.o
 
-# compiled Dynamic libraries
+# compiled synamic libraries
 *.so
 
-# compiled Static libraries
+# compiled static libraries
 *.lai
 *.la
 *.a
@@ -18,9 +18,10 @@
 # ignore network dependent config
 include/csg_file_ethz.h
 
+lib/*
+
 # misc
 .DS_Store
-lib/*
 .cproject
 .project
 
