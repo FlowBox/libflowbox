@@ -29,6 +29,7 @@
 #define __STDC_FORMAT_MACROS
 #include <inttypes.h>
 #include <stdint.h>
+#include <unistd.h>
 #include <tr1/unordered_map>
 
 #include <queue>
